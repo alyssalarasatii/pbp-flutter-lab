@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:counter_7/drawer.dart';
+import 'package:counter_7/utils/drawer.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -94,7 +95,7 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      drawer: buildDrawer(context),
+      drawer: Drawerz(),
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
@@ -115,21 +116,19 @@ class _MyHomePageState extends State<MyHomePage> {
           // horizontal).
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            if (_counter % 2 == 0)... [
+            if (_counter % 2 == 0)
               const Text(
-                "GENAP",
+                'GENAP',
+                style: TextStyle(color: Colors.red, fontSize: 16),
+              ),
+            if (_counter % 2 != 0)
+              const Text(
+                'GANJIL',
                 style: TextStyle(
-                  color: (Colors.red),
+                  color: Colors.blue,
+                  fontSize: 16,
                 ),
               ),
-            ]else...[
-              const Text(
-              'GANJIL',
-              style: TextStyle(
-                  color: (Colors.blue),
-                ),
-              ),
-            ],
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headline4,

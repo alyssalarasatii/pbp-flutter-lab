@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:counter_7/drawer.dart';
-import 'package:counter_7/budget.dart';
+import 'package:counter_7/utils/drawer.dart';
+import 'package:counter_7/model/budget.dart';
 
 class MyFormPage extends StatefulWidget {
   const MyFormPage({super.key});
@@ -34,7 +34,7 @@ class _MyFormPageState extends State<MyFormPage> {
       appBar: AppBar(
         title: const Text('Form Budget'),
       ),
-      drawer: buildDrawer(context),
+      drawer: Drawerz(),
       body: Form(
           key: _formKey,
           child: Container(
