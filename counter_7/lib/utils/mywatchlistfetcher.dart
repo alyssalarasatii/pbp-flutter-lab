@@ -14,10 +14,8 @@ Future<List<MyWatchList>> fetchWatchlist() async {
     },
   );
 
-  // melakukan decode response menjadi bentuk json
   var data = jsonDecode(utf8.decode(response.bodyBytes));
 
-  // melakukan konversi data json menjadi object MyWatchList
   List<MyWatchList> listMyWatch = [];
   for (var d in data) {
     if (d != null) {
